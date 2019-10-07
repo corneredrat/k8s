@@ -8,8 +8,10 @@
 `kubectl get ns`
 
 > To permanently set a namespace as default
+
 `kubectl config set-context $(kubectl config current-context) --namespace=<namespace>`
 Example: To set `asr` namespace as default:
+
 `kubectl config set-context $(kubectl config current-context) --namespace=asr`
 
 ## Workload controllers
