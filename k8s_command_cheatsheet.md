@@ -4,6 +4,7 @@
 
 
 > To list all the namespaces
+
 `kubectl get ns`
 
 > To permanently set a namespace as default
