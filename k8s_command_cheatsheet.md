@@ -40,6 +40,10 @@ Example: To set `asr` namespace as default:
 
 `kubectl get pods -n <namespace>`
 
+> To get complete details of pods
+
+`kubectl describe pod <pod-name> -n <namespace>`
+
 > To know which deployment/replicaset is controlling this pod:
 
 Sometimes even after deleteing the pod, a new one would automatically be generated. To know who is creating/controlling these pods :
