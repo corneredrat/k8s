@@ -1,4 +1,7 @@
 # Kubernetes cheatsheet 
+Install jq
+`sudo apt-get install jq -y`
+
 
 ## Namespaces
 
