@@ -148,6 +148,6 @@ Exposes an IP that is internal to the kubernetes cluster
 
 > To give a service account cluster-wide admin access:
 
-kubectl create clusterrolebinding <cluster role binding name> -n <namespace>  --clusterrole=cluster-admin --serviceaccount=<namespace>:<account-name>
+`kubectl create clusterrolebinding <cluster role binding name> -n <namespace>  --clusterrole=cluster-admin --serviceaccount=<namespace>:<account-name>`
 
 
