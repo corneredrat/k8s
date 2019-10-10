@@ -102,4 +102,52 @@ Sometimes, "bash" will not be present in container. use sh instead
 `kubectl exec -it <pod-name> -c <container-name> -n <namespace> -- /bin/sh`
 
 
+# Services
+
+There are three types of services that we majorly see time and again
+- ClusterIP
+- LoadBalancer
+- NodePort
+
+### NodePorts
+The service reserves a port in *every* node for itself,  which is in the range 30000-32767
+
+### LoadBalancer
+This type is exclusively for CloudProviders, not on-prem k8s setup. It creates
+a loadbalancer in the cloud-platform and directs traffic to the service
+
+### ClusterIP
+Exposes an IP that is internal to the kubernetes cluster
+
+
+> To list services
+
+`kubectl get svc -n <namespace>`
+
+
+> To list services in all namespaces
+
+`kubectl get svc --all-namespaces`
+
+
+> To get details of a service
+
+`kubectl describe svc <service name> -n <namespace>`
+
+> To edit a service, possibly for changing its type from clusterIP to
+> LoadBalancer, etc
+
+`kubectl edit svc <service-name> -n <namespace>`
+
+> To delete a service :
+
+`kubectl delete svc <service-name> -n <namespace>`
+
+
+# Cluster Role Binding.
+
+> To give a service account cluster-wide admin access:
+
+kubectl create clusterrolebinding <cluster role binding name> -n <namespace>  --clusterrole=cluster-admin --serviceaccount=<namespace>:<account-name>
+
 
